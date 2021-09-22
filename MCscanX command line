@@ -1,0 +1,21 @@
+two steps for using MCscanX
+1.blastp 
+2.prepare gff file
+
+now show the command line 
+
+1.blastp
+1.1 two species pep seq in fasta format
+1.2 do blastp 
+makeblastdb -in Ej.fa -dbtype prot
+blastp -query At.fa -db Ej.fa -out At_Ej.blast -evalue 1e-5 -outfmt 6 -num_threads 12 -num_alignment 5
+
+2.gff file 
+example
+sp# gene starting_position ending_position
+
+awk '{print$1,$4,$5,$9}' file > file1
+sed 's/;/ /g' file1 > file2
+sed 's/=/ /g' file2 > file3
+awk '{print $1 "\t" $7 "\t" $2 "\t" $3}' file3 >file4
+
