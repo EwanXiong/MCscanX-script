@@ -19,3 +19,11 @@ sed 's/;/ /g' file1 > file2
 sed 's/=/ /g' file2 > file3
 awk '{print $1 "\t" $7 "\t" $2 "\t" $3}' file3 >file4
 
+two file already in one dirctory 
+Eg. 
+dirctory name: At_Ej 
+1. At_Ej.blast
+2. At_Ej.gff
+
+### Run MCScanX
+./MCScanX At_Ej/At_Ej
